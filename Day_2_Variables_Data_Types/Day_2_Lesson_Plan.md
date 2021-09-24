@@ -5,4 +5,5 @@
 * type casting
 * input
 * exercises
+* create a conflict
 * Day 2 exercise review
