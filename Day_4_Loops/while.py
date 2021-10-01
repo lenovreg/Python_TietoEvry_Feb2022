@@ -123,7 +123,7 @@
 i = 5
 while i < 10:
     print(i)
-    # i += 1  # this will be bugged think about the even case....
+    i += 1  # this will be bugged think about the even case....
     if i % 2 == 0:   # i am testing whether some number has a reminder of 0 when divided by 2
         print("Even number", i)
         # continue  # we skip the following loop instructions
