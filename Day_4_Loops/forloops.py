@@ -1,19 +1,21 @@
 # # # # # for loops are for definite iteration
 # # # # # 
-# for num in range(5): #range is sort of half ready number sequence
+# for num in range(5):  # range is sort of half ready number sequence
 #     print("Hello there!")
 #     print("Number is", num)
 # print("out of loop", num)
 # # # so range takes range(start(default 0), end(not included), step)
-# for i in range(1, 11): # so careful of off-by-one errors
+
+# for i in range(1, 11): # so careful of off-by-one errors, remember range will stop at 10 not 11 here!
 #     print(f"I like this {i} better")
-# # my_name = "Valdis Saul"
+
+# my_name = "Valdis Saul"
 # my_name = "Kaķis Ņauva"
 # for c in my_name: # c could be also char, or my_c, c is just shorter
 #     print("Letter ", c)
 #     print(f"Letter {c} Unicode is {ord(c)}")
-# #     if c < "a": # this would include digits space,etc
-#     if c.isupper():
+# # #     if c < "a": # this would include digits space,etc
+#     if c.isupper():  #works  even on Latvian capital letters such as Ņ Ā etc
 #         print("You are using capital letters are you not?", c)
 #     else:
 #         print("not capital could be anyting else", c)
@@ -24,14 +26,15 @@
 # range with 2 parameters we have start inclusive and until end exclusive
 # for n in range(20,25):
 #     print(n)
-# # # # # 
+# # # # #
+
 # for my_num in range(100,110+1,2): # i can add step to range
 #     print(my_num)
 # # #     
 # start = 10
 # end = 37
 # step = 4
-# early_break = 527
+# early_break = 27
 # for my_num in range(start,end+1,step): # i can add step to range
 #     print(my_num)
 #     if my_num > early_break:
@@ -42,19 +45,19 @@
 # # 
 # # # # # 
 # # # # # 
-# for _ in range(3): # _ means that we do not care about the variable
+# for _ in range(3):  # _ means that we do not care about the variable, i just want to do something 3 times
 #     print("We do not need the number in this case")
 # # # #
 # # 
-big_total = 0
+# big_total = 0
 # even_number_count = 0
 # for i in range(1,5): # outer loop
-#     for j in range(1, 10+1): #inner loop
-#         mult_res = i*j
-#         print(f"{i}x{j}={mult_res}")
-#         big_total += mult_res
-#         if mult_res % 2 == 0:
-#             print("oh even number", mult_res)
+#     for j in range(1, 10+1):  #inner loop
+#         result = i * j
+#         print(f"{i}x{j}={result}")
+#         big_total += result
+#         if result % 2 == 0:
+#             print("oh even number", result)
 #             even_number_count += 1
 # # # # #     
 # # # # # my_name = "Valdis"
@@ -115,11 +118,11 @@ big_total = 0
 # # # #     result = my_num // n # whole number
 # # # #     print(f"{my_num} divided by {n} gives {result} with {reminder} as reminder")
 # # # 
-# for n in range(1,21):
-#     if n%2 == 0: # even numbers have no reminder when divided by 2
-#         print(f"{n} is even")
-#     else:
-#         print(f"{n} is odd")
+for n in range(1,21):
+    if n%2 == 0: # even numbers have no reminder when divided by 2
+        print(f"{n} is even")
+    else:
+        print(f"{n} is odd")
 # # #
 # # # print by default has end value \n - newline
 # # # we can change this
