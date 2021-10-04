@@ -2,12 +2,12 @@ word = input("First player, enter the text: ")
 # word = "Kartupeļu lauks"
 
 #guessed = "".join("*" for char in word) # downside is that this will include the empty space
-# guessed = "*"*len(word)
-# letter = " "  # to add back the spaces before starting
+guessed = "*"*len(word) # same as above
+letter = " "  # to add back the spaces before starting
 #
 while not letter == "0":
     # for i in range(len(word)):
-    for i, c in enumerate(word):
+    for i, c in enumerate(word): # more Pythonic
         # if word[i].lower() in letter.lower():  # guesses are not case sensitive
         if c.lower() in letter.lower():  # guesses are not case sensitive
             guessed = guessed[:i] + word[i] + guessed[i + 1:]
