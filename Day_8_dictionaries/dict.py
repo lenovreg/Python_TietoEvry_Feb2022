@@ -222,6 +222,12 @@ for n in numbers: # we loop through list and do something to dictionary
 
 print(blank_dict)
 
+for c in "my name is Valdis":
+    if c.isalpha():
+        print("This is a letter", c)
+    else:
+        print("Not a letter", c)
+
 
 # we can remove from original by going through copy
 # # # # print(tel.items())
