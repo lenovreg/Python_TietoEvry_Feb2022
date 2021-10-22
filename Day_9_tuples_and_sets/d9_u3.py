@@ -17,3 +17,4 @@ print(is_pangram('Tfū, čeh, džungļos blīkšķ, zvaņģim jācērp!', alphab
 
 print(is_pangram("defg", "abc"))
 print(is_pangram("abbbac", "abc"))
+set("abadd").
