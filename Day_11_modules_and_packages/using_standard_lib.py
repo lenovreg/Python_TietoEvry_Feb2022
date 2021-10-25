@@ -68,4 +68,13 @@ second = "01234"
 cartesian_product = list(itertools.product(first, second))  # so like double loop for all x all
 print(cartesian_product)
 
+numbers = list(range(10))
+new_shuffled = random.sample(numbers, 10)
+print(new_shuffled)
+# choices is not going to work here Return a k sized list of elements chosen from the population with replacement.
+print(random.choices(numbers, k=10))  # so choices will give us duplicates, with replacement
+print(numbers)
+random.shuffle(numbers)  # IN PLACE so returns nothing
+print(numbers)
+
 
