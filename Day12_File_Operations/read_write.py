@@ -238,19 +238,19 @@ print(file_path.suffix)
 # # # # # # import datetime
 # # # # # # # mode="a" is for append to the file
 # # now = dt.now()
-print("Now will append to ", file_path)
-with open(file_path, mode="a", encoding="utf-8") as f:
-    f.write("\n"+"*"*40+"\n")
-#
-    f.write(str(now)+"\n")  #wrote a timestamp into a file
-    for n in range(5):
-        f.write(f"{n}\n")
-    my_list = list("abba")
-    f.write("\n".join(my_list))  #another way how to add list elements in new lines
-    f.write("\n")
-    for line in filtered_lines:
-        f.write(line+"\n")
-    print("Printing into faile", file=f)  # this requires that f is open of course
+# print("Now will append to ", file_path)
+# with open(file_path, mode="a", encoding="utf-8") as f:
+#     f.write("\n"+"*"*40+"\n")
+# #
+#     f.write(str(now)+"\n")  #wrote a timestamp into a file
+#     for n in range(5):
+#         f.write(f"{n}\n")
+#     my_list = list("abba")
+#     f.write("\n".join(my_list))  #another way how to add list elements in new lines
+#     f.write("\n")
+#     for line in filtered_lines:
+#         f.write(line+"\n")
+#     print("Printing into faile", file=f)  # this requires that f is open of course
 #
 # # # # print(now.day, now.year, now.minute, now.second)
 # # # now = dt.now()
@@ -266,12 +266,12 @@ with open(file_path, mode="a", encoding="utf-8") as f:
 # # # # # # # # # # open two files one for reading one for writing
 # # # # # # # # # # this could be very useful for working with very large files > more than your RAM
 # # # # # # # with open('Diena_12_Faili/frost.txt', encoding="utf-8") as fin, open('frost-filtered.txt', mode="w", encoding="utf-8") as fout:
-# with open('frost.txt', encoding="utf-8") as fin, open("frost_out_o27.txt", mode="w", encoding="utf-8") as fout:
-#     for line in fin:  # for each line in incoming file
-#         if line.startswith("And"):  # check some condition could be very complicated
-# # # #             # we could do more text processing here
-#             fout.write(line)  # write into outgoing file
-# # # so here both files will be closed and ready to be used
+with open('frost.txt', encoding="utf-8") as fin, open("frost_and_o29.txt", mode="w", encoding="utf-8") as fout:
+    for line in fin:  # for each line in incoming file  # will work even on huge files because you do not need to store all in memory
+        if line.startswith("And"):  # check some condition could be very complicated
+            # we could do more text processing here
+            fout.write(line)  # write into outgoing file
+# # so here both files will be closed and ready to be used
 #
 # # # # # with open('frost.txt', encoding="utf-8") as fin, open('frost-yelling.txt', mode="w", encoding="utf-8") as fout:
 # # # # #     for line in fin:  # for each line in incoming file
