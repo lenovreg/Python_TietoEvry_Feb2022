@@ -7,10 +7,11 @@
 # # # # # # # # # usually we have Unicode today (encoding using UTF-8)
 # # # # # # # # # creating file object (file stream)
 # # # # # # # # # closing file automatically with with contextcd
-import os  #system library
+import os  # system library
 import string
-from datetime import datetime as dt  #datetime has datetime submodule(klase)
-from pathlib import Path # this is newer for path manipulation
+from datetime import datetime as dt  # datetime has datetime submodule(klase)
+from pathlib import Path  # this is newer for path manipulation
+
 #
 print(os.getcwd())
 print(os.listdir())  # an older way of getting file directory
@@ -47,7 +48,7 @@ print(files)
 # a recommended approach is to use a context manager
 # with open("frost.txt") as fstream:  # reading mode is implied
 #     text = fstream.read()
-    # fstream is still open
+# fstream is still open
 # fstream is already closed
 # print(text)
 
@@ -93,7 +94,7 @@ print(files)
 #
 # # # # more modern is Path - better compatibility across OSes Windows/Mac/Linux
 # # # # so going through current directory recursively getting all objects ending with .txt and making sure they are files
-text_files = [f for f in Path("./").rglob("*.txt") if f.is_file()]  #rglob is recursive goes through subfolders
+text_files = [f for f in Path("./").rglob("*.txt") if f.is_file()]  # rglob is recursive goes through subfolders
 print(text_files)
 # # # # # # from one level up recursively all text files in my project (one level up)
 text_files = [f for f in Path("../.").rglob("*.txt") if f.is_file()]
@@ -134,8 +135,8 @@ print(my_path)
 # # # # # # # # with open('Diena_12_Faili/frost.txt', encoding="utf-8") as f:  # create a file object
 # with open('frost.txt', encoding="utf-8") as f:  # create a file object
 #     for line in f:  # so this will work even on huge files as long as each line ends with \n
-        # print(line)  # of course for big files we will not want to print
-        # print(line, end="")  # of course for big files we will not want to print
+# print(line)  # of course for big files we will not want to print
+# print(line, end="")  # of course for big files we will not want to print
 # # #         print(line.rstrip())  # get rid of all whitespace on right side
 #         print(line.rstrip("\n"))  # most precise strips newline on right side
 # # # # # # # #         # quick and dirty and generally okay possible last line has no \n
@@ -169,7 +170,7 @@ print(my_path)
 #
 # # # # # # print(mylines[:5])
 #
-needle = "roads" # what i want to find
+needle = "roads"  # what i want to find
 # # # # # # # with open('Diena_12_Faili/frost.txt', encoding="utf-8") as f:  # create a file object
 with open('frost.txt', encoding="utf-8") as f:  # create a file object
     # filtered_lines = [line for line in f if needle in line]
@@ -189,13 +190,13 @@ print(filtered_lines)
 # print(filtered_lines)
 # # # # i want to save my filtered lines
 # # # # mode = w will overwrite old fiile, no error
-now = dt.now()  #timestampe fixed here
+now = dt.now()  # timestampe fixed here
 print(now)
 # # # # # timestamp in file name
 file_path = Path("frost_cleaned_o29.txt")
 # file_path = Path(f"frost_{needle}_{now.month}_{now.day}_{now.hour}_{now.minute}_{now.second}.txt")
 print(file_path)
-print(file_path.stem) #without extension this is offer by Path
+print(file_path.stem)  # without extension this is offer by Path
 print(file_path.suffix)
 #
 # if file_path.is_file(): # this is offered by Path from standard library module pathlib
@@ -265,17 +266,21 @@ print(file_path.suffix)
 # # print(file_path)
 # # # # # # # # # # open two files one for reading one for writing
 # # # # # # # # # # this could be very useful for working with very large files > more than your RAM
-# # # # # # # with open('Diena_12_Faili/frost.txt', encoding="utf-8") as fin, open('frost-filtered.txt', mode="w", encoding="utf-8") as fout:
+
+# # # # # # # with open('Diena_12_Faili/frost.txt', encoding="utf-8") as fin, open('frost-filtered.txt', mode="w",
+# encoding="utf-8") as fout:
 with open('frost.txt', encoding="utf-8") as fin, open("frost_and_o29.txt", mode="w", encoding="utf-8") as fout:
-    for line in fin:  # for each line in incoming file  # will work even on huge files because you do not need to store all in memory
+    for line in fin:  # for each line in incoming file
+        # will work even on huge files because you do not need to
+        # store all in memory
         if line.startswith("And"):  # check some condition could be very complicated
             # we could do more text processing here
             fout.write(line)  # write into outgoing file
 # # so here both files will be closed and ready to be used
 #
-# # # # # with open('frost.txt', encoding="utf-8") as fin, open('frost-yelling.txt', mode="w", encoding="utf-8") as fout:
-# # # # #     for line in fin:  # for each line in incoming file
-# # # # #         fout.write(line.upper()) # keeping also the newlines
+# # # # # with open('frost.txt', encoding="utf-8") as fin, open('frost-yelling.txt', mode="w", encoding="utf-8") as
+# fout: # # # #     for line in fin:  # for each line in incoming file # # # #         fout.write(line.upper()) #
+# keeping also the newlines
 #
 # # # # # # we can open files without with
 # # # # # f = open('frost.txt', encoding="utf-8")
