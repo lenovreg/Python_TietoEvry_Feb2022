@@ -13,6 +13,7 @@ import os
 # from pathlib import Path # this is newer for path manipulation
 #
 print(os.getcwd())
+
 #
 # # # # # # # # # # # with - context manager
 #
