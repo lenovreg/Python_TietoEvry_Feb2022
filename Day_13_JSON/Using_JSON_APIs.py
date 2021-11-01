@@ -464,6 +464,7 @@ with open("data_from_url.csv", mode="w") as f:
 
 import time  # this is a standard library that allows us to do time related stuff
 
+# it is considered good practice to use time.sleep() to slow down your requests
 for i in range(10):
     print(i)
     # so make request here
