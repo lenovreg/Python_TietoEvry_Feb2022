@@ -21,7 +21,9 @@ time.sleep(0.5)
 regions = driver.find_elements_by_tag_name("h4")  # there is also a singular  find_element which find first match
 print("Found", len(regions), "regions")
 first_region = regions[0]  # should be Riga in our example
-first_region_children = first_region.children  # this will return a list of elements that are children of first region
+
+# first_region_children = first_region.children  # this will return a list of elements that are children of first region
+first_region
 
 # this will return first anchor among children
 first_anchor_among_children = first_region_children.find_element_by_tag_name("a")
