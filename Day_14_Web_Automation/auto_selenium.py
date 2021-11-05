@@ -34,3 +34,16 @@ print(first_region_children[0].tag_name, first_region_children[0].text)
 # first_anchor_among_children = first_region_children[0].find_element_by_tag_name("a")
 print(first_region_children[0].get_attribute("href"))
 first_region_children[0].click()
+
+
+def my_function(my_param):
+    """
+    This is a function
+    also it has a docstring
+    @my_param is a parameter
+    """
+    print("Hello from my_function")
+    print(my_param)
+
+
+my_function("Hello")
