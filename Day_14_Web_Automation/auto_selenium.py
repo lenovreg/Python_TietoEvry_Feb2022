@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 import time  # we might need to insert some delay in the code
 from selenium.webdriver.chrome.service import Service
 
@@ -23,8 +24,13 @@ print("Found", len(regions), "regions")
 first_region = regions[0]  # should be Riga in our example
 
 # first_region_children = first_region.children  # this will return a list of elements that are children of first region
-first_region
+# https://stackoverflow.com/questions/24795198/get-all-child-elements
+first_region_children = first_region.find_elements(By.XPATH, ".//*")
 
 # this will return first anchor among children
-first_anchor_among_children = first_region_children.find_element_by_tag_name("a")
-print(first_anchor_among_children.get_attribute("href"))
+print("Found", len(first_region_children), "children")
+print(first_region_children)
+print(first_region_children[0].tag_name, first_region_children[0].text)
+# first_anchor_among_children = first_region_children[0].find_element_by_tag_name("a")
+print(first_region_children[0].get_attribute("href"))
+first_region_children[0].click()
