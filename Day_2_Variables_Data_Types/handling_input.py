@@ -1,3 +1,7 @@
+import datetime
+print("Today is", datetime.datetime.now())
+print("The year is", datetime.datetime.now().year)
+
 # my_name = input("What is your name friend? ")
 # print(f"Wow that is a nice name {my_name}") # i am using f-string formatting which is available in Python since 3.6 and up
 # # # # this lets me put variable directly into my string text
@@ -19,9 +23,9 @@
 # round_a_4_digits = round(a, 4) # 4 digits after comma
 # print(a, round_a_4_digits, round(a, 2), round(a))
 #
-my_result = 0.1+0.2
-print(my_result)  # floats are not precise so this is not 0.3
-my_zero = my_result-0.3
-print(my_zero) # that is like almost zero 17 zeros after comma....
-my_zero = round(my_zero)
-print(my_zero)
+# my_result = 0.1+0.2
+# print(my_result)  # floats are not precise so this is not 0.3
+# my_zero = my_result-0.3
+# print(my_zero) # that is like almost zero 17 zeros after comma....
+# my_zero = round(my_zero)
+# print(my_zero)
