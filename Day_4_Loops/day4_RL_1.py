@@ -1,19 +1,3 @@
-#  while True:
-# #     res = input("Enter number or q to quit ")
-# # #     if res.lower().startswith("q"): # more lenient any word starting with Q or q will work to quit
-# #     if res == "q":
-# #         print("No more calculations today. I am breaking out of the loop.")
-# #         break
-# #     elif len(res) == 0:  # so i had an empty string here...
-# #         print("Hey! You just pressed Enter, please enter something...")
-# #         continue # we go back to line 83 and start over
-# #     # elif res == "a":  # TODO check if if the input is text
-# #     elif res[0].isalpha():  # we are checking here for the first symbol of our input
-# #         print("I can't cube a letter ")
-# #         continue # means we are not going to try to convert "a" to float
-# #         # in other words we are not going to do the below 4 instructions
-# #     num = float(res)
-
 while True:
     skaitlis=input('Input a number, q to quit!')
     if skaitlis.lower().startswith('q'):
