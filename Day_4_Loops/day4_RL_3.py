@@ -1,11 +1,8 @@
 while True:
     try:
-        res=input('Please enter any positive number or q to quit:')
-        if res[0].lower().isalpha()=='q':
-            print('Fininsh testing primary numbers')
-            break
-        else:
-            num = int(res)
+        res=int(input('Please enter any positive number or any other character to quit:'))
+        if res>0:
+            num = res
             ir_pirmskaitlis=False
             skaits=0
             if num > 0:
@@ -13,9 +10,9 @@ while True:
                     if num%i==0:
                        skaits+=1
                 if skaits==2:
-                    print(f'Number you have entered {skaitlis} is primary number.')
+                    print(f'Number you have entered {res} is primary number.')
                 else:
-                    print(f'Number you have entered {skaitlis} is not a primary number.')
+                    print(f'Number you have entered {res} is not a primary number.')
             continue
     except:
         print('number should be given.')
