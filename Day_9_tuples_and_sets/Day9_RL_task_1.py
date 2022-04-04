@@ -32,19 +32,16 @@ print(min_value, max_value, avg_value)
 #
 
 def get_min_med_max(my_set):
-
-    nums_count=0
-    num_sum=0
     my_list=list(my_set)
-    print(my_list)
-    for n in my_set:
-        if type(n)==int:
-            num_sum+=n
-            nums_count+=1
-    avg_val=round(num_sum/nums_count)
-    return min(my_set),max(my_set), avg_val
-my_set=tuple([0,10,1,9])
-sum(tuple(my_set))
-print(my_set, type(my_set))
-min_value,max_value, avg_value=get_min_med_max(my_set)
-print(min_value, max_value, avg_value)
+    my_list.sort()
+    mid_idx=round(len(my_list)/2)
+    if len(my_list) % 2==0:
+        mid_value=my_list[mid_idx-1] + my_list[mid_idx]
+    else:
+        mid_value=my_list[mid_idx]
+
+    return min(my_set),mid_value,max(my_set)
+my_set=tuple("baaac")
+print(f'{my_set=}, min, med, max = {get_min_med_max(my_set)}')
+
+#print(min_value, max_value, avg_value)
